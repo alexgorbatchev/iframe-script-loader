@@ -4,6 +4,8 @@ require 'coffee-errors'
 iframeScriptLoader = require '../src/iframe-script-loader'
 
 describe 'iframe-script-loader', ->
+  @timeout 10000
+
   scripts = null
 
   before (done) ->

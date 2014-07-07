@@ -12,10 +12,10 @@ describe 'iframe-script-loader', ->
     expect(window.async).to.be.falsy
     expect(window.URI).to.be.falsy
 
-    iframeScriptLoader
-      async: '//cdnjs.cloudflare.com/ajax/libs/async/0.9.0/async.js'
-      URI: 'http://cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js'
-      , (err, results) ->
+    iframeScriptLoader [
+      ['async', '//cdnjs.cloudflare.com/ajax/libs/async/0.9.0/async.js']
+      ['URI', 'http://cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js']
+    ] , (err, results) ->
         scripts = results
         done()
 

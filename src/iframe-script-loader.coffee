@@ -3,17 +3,21 @@
 require 'es5-shim'
 
 iframeScript = require 'iframe-script'
-parallel = require 'run-parallel'
+parallel     = require 'run-parallel'
 scriptLoader = require 'scriptloader'
 
 module.exports = (scripts, callback) ->
+  jobs = []
   results = {}
 
   iframeScript (-> {doc: document, win: window}), {}, (err, {doc, win}) ->
-    for name of scripts
-      do (name, src = scripts[name]) ->
-        results[name] = (done) ->
-          scriptLoader doc, src, (err) ->
-            done err, win[name]
+    for item in scripts
+      do (item) ->
+        [keys..., src] = item
 
-    parallel results, callback
+        jobs.push (done) ->
+          scriptLoader doc, src, (err) ->
+            results[key] = win[key] for key in keys
+            done err
+
+    parallel jobs, (err) -> callback err, results

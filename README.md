@@ -18,8 +18,8 @@ A basic helper module to load scripts into an IFRAME. This is helpful if you are
     var iframeScriptLoader = require('iframe-script-loader');
 
     var scripts = {
-      async: '//cdnjs.cloudflare.com/ajax/libs/async/0.9.0/async.js',
-      URI: 'http://cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js'
+      ['async', '//cdnjs.cloudflare.com/ajax/libs/async/0.9.0/async.js']
+      ['URI', 'http://cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js']
     };
 
     iframeScriptLoader(scripts, function(err, results) {
@@ -31,8 +31,8 @@ A basic helper module to load scripts into an IFRAME. This is helpful if you are
 
 ### iframeScriptLoader(scripts, callback)
 
-- `scripts` is a key/value table where a key is a script name and at the same time variable name that loaded script adds to `window`, eg `window[key]`. The value is script source.
-- `callback` is a `function(err, results)` that gets called when all scripts have loaded. `results` is a key/value table which contains the same keys as `scripts` and the values are loaded scripts.
+- `scripts` is a list of tuples (or more) where the last value is script source and all other values are variable names that the script exports into the `window`.
+- `callback` is a `function(err, results)` that gets called when all scripts have loaded. `results` is a key/value table which contains all exported keys as listed in the `scripts`.
 
 ## Testing
 

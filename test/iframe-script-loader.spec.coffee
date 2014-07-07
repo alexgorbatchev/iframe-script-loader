@@ -1,3 +1,6 @@
+# https://github.com/ariya/phantomjs/issues/10522
+# phantomjs uses old JS core... still?
+require 'es5-shim'
 require 'coffee-errors'
 
 {expect} = require 'chai'

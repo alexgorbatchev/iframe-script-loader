@@ -1,7 +1,3 @@
-# https://github.com/ariya/phantomjs/issues/10522
-# phantomjs uses old JS core... still?
-require 'es5-shim'
-
 iframeScript = require 'iframe-script'
 parallel     = require 'run-parallel'
 scriptLoader = require 'scriptloader'

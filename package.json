@@ -1,6 +1,6 @@
 {
   "name": "iframe-script-loader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "./lib/iframe-script-loader.js",
   "description": "Allows you to load multiple scripts in an IFRAME sandbox.",
   "keywords": [

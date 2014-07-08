@@ -29,16 +29,8 @@ configSauceLabs = (opts) ->
 
   customLaunchers = {}
 
-  # browser 'safari', '5', 'OS X 10.6'
-  # browser 'safari', '6', 'OS X 10.8'
-  browser 'safari', '7', 'OS X 10.9'
-  # browser 'chrome', '35', 'OS X 10.9'
-  browser 'chrome', '34', 'OS X 10.9'
-  # browser 'firefox', '30', 'OS X 10.9'
-  browser 'firefox', '29', 'OS X 10.9'
-  # browser 'internet explorer', '9', 'Windows 7'
-  # browser 'internet explorer', '10', 'Windows 7'
-  browser 'internet explorer', '11', 'Windows 7'
+  {BROWSER, VERSION, PLATFORM} = process.env
+  browser BROWSER, VERSION, PLATFORM
 
   opts.sauceLabs = testName: 'iframe-script-loader'
   opts.customLaunchers = customLaunchers

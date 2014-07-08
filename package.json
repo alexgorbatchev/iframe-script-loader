@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "pretest": "browserify --outfile=lib/iframe-script-loader.js --entry=src/iframe-script-loader.coffee --extension=.coffee --transform=coffeeify --standalone='iframe-script-loader'",
-    "test": "./node_modules/karma/bin/karma start --single-run --no-auto-watch",
+    "test": "./test.sh",
     "dev": "./node_modules/karma/bin/karma start --no-single-run --auto-watch"
   },
   "repository": {

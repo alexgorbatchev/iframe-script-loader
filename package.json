@@ -36,6 +36,6 @@
   "dependencies": {
     "iframe-script": "^1.0.0",
     "run-parallel-object": "^1.0.1",
-    "scriptloader": "git://github.com/alexgorbatchev/scriptloader#patch-2"
+    "scriptloader": "^1.1.1"
   }
 }

@@ -10,7 +10,7 @@
     "script-loader"
   ],
   "scripts": {
-    "pretest": "browserify --outfile=lib/iframe-script-loader.js --entry=src/iframe-script-loader.coffee --extension=.coffee --transform=coffeeify --standalone='iframe-script-loader'",
+    "pretest": "coffee --output lib --bare src/iframe-script-loader.coffee",
     "test": "./test.sh",
     "dev": "./node_modules/karma/bin/karma start --no-single-run --auto-watch"
   },
@@ -34,7 +34,7 @@
     "run-parallel": "^1.0.0"
   },
   "dependencies": {
-    "iframe-script": "^1.0.0",
+    "iframe-script": "^1.0.2",
     "run-parallel-object": "^1.0.1",
     "scriptloader": "^1.1.1"
   }
